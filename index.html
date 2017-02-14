@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<!-- Steven Style Sheet -->
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+		<title>Hangman Game</title>
+		<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header class="row">
+		<img id="headerimageleft" src="http://i.giphy.com/3rKFa3sCvKBL7aDlN6.gif">
+		<h1>Basketball Hangman</h1>
+		<img id="headerimageright" src="http://i.giphy.com/3rKFa3sCvKBL7aDlN6.gif">	
+	</header>		
+	<div id="main-div">
+		<section class="winningboxleft">
+			<img class="thumbnail" id="winningboximage" src="../../../Downloads/hD7C04s.gif">
+		</section>
+		<section class="winningboxright" id="hangmanbox">
+			<h2>Press Any Key to Get Started!</h2>
+		</section>
+	</div>
+	
+	<script>
+		$(document).ready(function(){
+		$(document).one("keyup",function(){
+		console.log("Hello");
+		$("#hangmanbox").css("borderColor","red");
+		});
+		});
+	</script>
+</body>
+
+</html>
