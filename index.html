@@ -13,28 +13,54 @@
 		<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 </head>
 <body>
+	<div class="text-right">
 	<header class="row">
 		<img id="headerimageleft" src="http://i.giphy.com/3rKFa3sCvKBL7aDlN6.gif">
 		<h1>Basketball Hangman</h1>
 		<img id="headerimageright" src="http://i.giphy.com/3rKFa3sCvKBL7aDlN6.gif">	
 	</header>		
-	<div id="main-div">
-		<section class="winningboxleft">
-			<img class="thumbnail" id="winningboximage" src="../../../Downloads/hD7C04s.gif">
-		</section>
-		<section class="winningboxright" id="hangmanbox">
-			<h2>Press Any Key to Get Started!</h2>
-		</section>
+	<div class="container" id="main-div">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-3">
+				<section class="winningboxleft">
+					<img class="thumbnail" id="winningboximage" src="../../../Downloads/hD7C04s.gif">
+				</section>
+			</div>
+			<div class="col-md-3">
+				<section class="winningboxright" id="hangmanbox">
+					<h2>Press Any Key to Get Started!</h2>
+				</section>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
 	</div>
-	
 	<script>
 		$(document).ready(function(){
+		var winsDiv = $("<div>");
+		winsDiv.attr("id","wins-box");
+		var wordDiv = $("<div>");
+		wordDiv.attr("id","word-box");
+		var guessesDiv = $("<div>");
+		guessesDiv.attr("id","guesses-box");
+		var lettersDiv = $("<div>");
+		lettersDiv.attr("id","letters-box");
 		$(document).one("keyup",function(){
 		console.log("Hello");
-		$("#hangmanbox").css("borderColor","red");
+		$("#hangmanbox").html("");
+		$("#hangmanbox").append(winsDiv);
+		$("#hangmanbox").append(wordDiv);
+		$("#hangmanbox").append(guessesDiv);
+		$("#hangmanbox").append(lettersDiv);
+		$("#wins-box").html("<h4>Wins</h4>");
+		$("#word-box").html("<h4>Current Word</h4>");
+		$("#guesses-box").html("<h4>Number of Guesses Remaining</h4>");
+		$("#letters-box").html("<h4>Letters Already Guesses</h4>");
+
 		});
 		});
 	</script>
+	</div>
 </body>
 
 </html>
