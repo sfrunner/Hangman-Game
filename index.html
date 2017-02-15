@@ -45,6 +45,15 @@
 		guessesDiv.attr("id","guesses-box");
 		var lettersDiv = $("<div>");
 		lettersDiv.attr("id","letters-box");
+		var winsCountDiv = $("<div>");
+		winsCountDiv.attr("id","wins-count-box");
+		var wordSpaceDiv = $("<div>");
+		wordSpaceDiv.attr("id","word-guess-box");
+		var guessesCountDiv = $("<div>");
+		guessesCountDiv.attr("id","guesses-count-box");
+		var lettersVisibleDiv = $("<div>");
+		lettersVisibleDiv.attr("id","letters-visible-box");
+		
 		$(document).one("keyup",function(){
 		console.log("Hello");
 		$("#hangmanbox").html("");
@@ -53,10 +62,21 @@
 		$("#hangmanbox").append(guessesDiv);
 		$("#hangmanbox").append(lettersDiv);
 		$("#wins-box").html("<h4>Wins</h4>");
+		$("#wins-box").append(winsCountDiv);
+		$("#wins-count-box").html("<h4>0</h4>");
 		$("#word-box").html("<h4>Current Word</h4>");
+		$("#word-box").append(wordSpaceDiv);
+		$("#word-guess-box").html("<h4>_ _ _ _ _ _ _</h4>");
 		$("#guesses-box").html("<h4>Number of Guesses Remaining</h4>");
+		$("#guesses-box").append(guessesCountDiv);
+		$("#guesses-count-box").html("<h4>10</h4>");
 		$("#letters-box").html("<h4>Letters Already Guesses</h4>");
-
+		$("#letters-box").append(lettersVisibleDiv);
+		});
+		
+		$(document).keypress(function() {
+		var userKey = event.key.toLowerCase();
+		console.log(userKey);
 		});
 		});
 	</script>
